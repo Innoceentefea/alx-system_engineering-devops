@@ -1,1 +1,15 @@
-hello
+Shell permissions refer to the access control mechanisms used in Unix-like operating systems to determine who can read, write, and execute files and directories. These permissions are set by the file or directory owner and can be modified by users with appropriate permissions.
+
+In Unix-like systems, there are three types of permissions that can be assigned to a file or directory:
+
+1. Read permission: This permission allows a user to read the contents of a file or list the contents of a directory.
+
+2. Write permission: This permission allows a user to modify the contents of a file or create, rename, or delete files and directories within a directory.
+
+3. Execute permission: This permission allows a user to execute a file as a program or change into a directory.
+
+Permissions are assigned to three categories of users: the owner of the file or directory, members of the file or directory's group, and all other users. Permissions are represented by a series of letters and symbols that indicate the level of access granted. The letters "r", "w", and "x" represent read, write, and execute permissions, respectively, while the symbols "+" and "-" are used to add or remove permissions.
+
+For example, the permission string "-rw-r--r--" indicates that the owner of the file has read and write permissions, while members of the group and all other users have only read permissions.
+
+Shell permissions are an important aspect of security in Unix-like systems, as they enable users to control who has access to their files and directories. By setting appropriate permissions, users can prevent unauthorized access, modification, or execution of their files and directories. 
