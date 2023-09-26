@@ -1,6 +1,6 @@
 A web server is a software application that serves web content to clients over the internet or an intranet. It is a fundamental component of the client-server model used on the World Wide Web. Web servers handle incoming requests from clients, such as web browsers, and respond by delivering web pages, files, or other resources.
 
-Here's a detailed explanation of what a web server is all about:
+Here's a detailed explanation of what a web server is all about:=
 
 1. Request Handling: Web servers receive HTTP (Hypertext Transfer Protocol) requests from clients, which typically include web browsers. These requests can be for various resources, including HTML pages, images, CSS files, JavaScript files, or any other content accessible via a web address (URL). The web server processes these requests and generates appropriate responses to be sent back to the client.
 
