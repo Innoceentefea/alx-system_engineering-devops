@@ -5,6 +5,8 @@ sudo apt-get update -y
 sudo apt-get install -y nginx
 
 echo "Hello World!" > /var/www/html/index.nginx-debian.html
-sudo sed -i "/listen 80 default_server;/a rewrite ^/redirect_me https://github.com permanent;" /etc/nginx/sites-enabled/default
-
+sudo sed -i "/listen 80 default_server;/a\
+     location /redirect_me {\
+        return 301 https://github.com;\
+     }" /etc/nginx/sites-enabled/default
 sudo service nginx restart
