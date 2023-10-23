@@ -1,29 +1,39 @@
 #!/usr/bin/python3
 """
-a script that returns info about a customer's todo list
+This script will fetch the TODO list for the employee with
+the provided ID and display the progress of each task.
+Make sure to have the requests module installed
+before running the script.
 """
+
+import json
 import requests
 from sys import argv
 
 
-if __name__ == '__main__':
-    url = "https://jsonplaceholder.typicode.com"
-    employeeId = argv[1]
+if __name__ == "__main__":
 
-    employee = requests.get("{}/users/{}".format(url, employeeId)).json()
-    todos = requests.get(url + "/todos", params={"userId": employeeId}).json()
+    sessionReq = requests.Session()
 
-    completed_tasks = []
-    for data in todos:
-        if data.get('completed') is True:
-            completed_tasks.append(data.get('title'))
+    idEmp = argv[1]
+    idURL = 'https://jsonplaceholder.typicode.com/users/{}/todos'.format(idEmp)
+    nameURL = 'https://jsonplaceholder.typicode.com/users/{}'.format(idEmp)
 
-    employee_name = employee.get('name')
-    total_num_of_tasks = len(todos)
-    num_of_tasks_done = len(completed_tasks)
+    employee = sessionReq.get(idURL)
+    employeeName = sessionReq.get(nameURL)
 
-    print("Employee {} is done with tasks({}/{}):".format(employee_name,
-          num_of_tasks_done, total_num_of_tasks))
+    json_req = employee.json()
+    name = employeeName.json()['name']
 
-    for title in completed_tasks:
-        print("\t {}".format(title))
+    totalTasks = 0
+
+    for done_tasks in json_req:
+        if done_tasks['completed']:
+            totalTasks += 1
+
+    print("Employee {} is done with tasks({}/{}):".
+          format(name, totalTasks, len(json_req)))
+
+    for done_tasks in json_req:
+        if done_tasks['completed']:
+            print("\t " + done_tasks.get('title'))
