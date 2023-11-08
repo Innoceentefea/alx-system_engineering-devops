@@ -1,4 +1,4 @@
-tack monitoring refers to the practice of monitoring and observing the various components and layers of a web application's technology stack to ensure their optimal performance, availability, and reliability. It involves collecting and analyzing data related to the infrastructure, servers, databases, APIs, and other components that make up the web stack.
+Web stack monitoring refers to the practice of monitoring and observing the various components and layers of a web application's technology stack to ensure their optimal performance, availability, and reliability. It involves collecting and analyzing data related to the infrastructure, servers, databases, APIs, and other components that make up the web stack.
 
 Here are some key aspects and goals of web stack monitoring:
 
